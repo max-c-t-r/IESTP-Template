@@ -11,7 +11,7 @@ const sizeNews = 2;
 
 const categoryCommunicated = 29;
 const sizeCommunicated = 3;
-// const searchText = document.getElementById('txt-buscar'); //borrar
+
 const contentNews = document.getElementById('news-group');
 const contentCommunicated = document.getElementById('communicated-group');
 const buttonSearch = document.getElementById('send-search');
@@ -24,23 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     paintSlider();
     paintNews();
     paintCommunicated();
-    // pintarModal();
-    // pintarNews(); ->borrar
-    // pintarSlider();
-
-    //search   
-    // buttonSearch.addEventListener('click', ()=>{
-    //     search(searchText.value);
-    // });
 });
-// borrar ya no hay buscador
-function search(text = '') {
-    if (text.trim() !== '') {
-        window.open(`https://josemariaarguedas.iestpsanjuan.edu.pe/index.php?s=${text}`);
-        //window.location.href = `https://ww2.institutoaucara.edu.pe/index.php?s=${text}`;
-    }
-}
-
 function paintModal(){
     getCategories(categoryModal, sizeModal).then(data =>{
         const promises = data.map(category =>{
@@ -180,6 +164,6 @@ async function getMedia(category) {
         const data = await media.json();
         return data;
     } catch(error){
-        console.error(e);
+        console.error(error);
     }
 }

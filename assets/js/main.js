@@ -743,35 +743,9 @@
             items:3
         },
         1000:{
-            items:4
+            items:5
         }
       }
     });
-    
-    $(document).ready(function() {
-      // Primer carrusel
-      $(".primer-carrusel").owlCarousel({
-        items: 2,
-        // Otras opciones para el primer carrusel
-      });
-    
-      // Segundo carrusel en la sección aparte
-      $(".segundo-carrusel").owlCarousel({
-        items: 3,
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        responsive: {
-          0: {
-            items: 2
-          },
-          768: {
-            items: 3
-          }
-        }
-      });
-    });
-    
+        
 })(jQuery);	

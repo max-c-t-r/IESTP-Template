@@ -41,7 +41,9 @@
 /*  1. Template default CSS
 /*----------------------------------------*/
 /*-- Google Font --*/
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
 /*-- Common Style --*/
 @media only screen and (min-width: 1200px) {
   .container {
@@ -74,15 +76,7 @@
   --color-base-light: #a788e7; /*Base color light for page*/
   --color-nav-hover: #FBFF48; /*Color for navigation hover*/
   --color-study-programs: #F4F4F4; /*color background for programs*/
-  --color-copyright: #303D3A; /*Base color for backgrpund footer*/
-
-  --color-v: #0b7335;      /*Color base of page*/
-  --color-v2: rgb(0, 0, 0);     /*Color hover from card of courses*/
-  --color-v3: #13292e;     /*Color dark of color base for footer*/
-  --color-v4: #6b6b6b;     /*Color hover of first card*/
-  --color-v5: #13292e;     /*Color hover of curses section*/
-  --color-v6: linear-gradient(180deg, #505467 0, #1f3259 50%, #00154b 100%);   /*Color hover of advantages section*/
-  --color-v7: linear-gradient(180deg, #65736e 0, #586d68 12.5%, #496763 25%, #37605d 37.5%, #1f5959 50%, #005156 62.5%, #004a54 75%, #004453 87.5%, #003d52 100%);   /*Color hover of our-teachers section*/
+  --color-copyright: #303D3A; /*Base color for background footer*/
 }
 html,
 body {
@@ -95,7 +89,8 @@ body {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   color: #333;
 }
 
@@ -1558,6 +1553,10 @@ textarea:focus {
 .mean-container .mean-nav ul li a:hover{
   color: var(--color-base);
 }
+.mean-container a.meanmenu-reveal{
+  top: -50px;
+  right: 20px;
+}
 /*-- 
     Scroll Up 
 -----------------------------------------*/
@@ -1649,7 +1648,56 @@ textarea:focus {
 }
 
 /*--------- 2. Header style ---------*/
-.header-top {
+.header{
+  width: 100%;
+}
+.header-container{
+  margin: 0 auto;
+  max-width: 1290px;
+  padding: 0 1.5rem;
+}
+.header-information{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  height: 55.53px;
+}
+.header-information .header-logo{
+  height: 100%;
+}
+.header-information .header-logo img{
+  max-width: 278px;
+  max-height: 49px;
+}
+.header .header-others-social{
+  margin: 10px 0;
+}
+.header-nav{
+  background-color: var(--color-base);
+  height: 80px;
+}
+.header-nav .main-menu{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.header-nav-options{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-menu nav ul li a{
+  font-size: 14px !important;
+  padding: 3.2px;
+}
+.header-nav-options i{
+  font-size: 12.6px!important;
+}
+/* .header-top {
   padding: 15px 0 22px;
   position: relative;
 }
@@ -1805,12 +1853,17 @@ textarea:focus {
 
 .logo {
   margin-top: 10px;
-}
+} */
 .header-others-social{
   display: flex;
   border-right: 2px solid #8FC0B4;
   gap: 10px;
   padding-right: 15px;
+  align-items: center;
+}
+.header-others-social a:hover,
+.header-others-number a:hover{
+  color: var(--color-nav-hover);
 }
 .header-others-number{
   display: flex;
@@ -1841,6 +1894,12 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 767px) {
+  .container-header-logo .header-others-logo{
+    display: none !important;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .logo {
@@ -1916,28 +1975,10 @@ textarea:focus {
 .main-menu nav ul li ul.submenu li a:hover {
   color: var(--color-base);
 }
-/*
-.main-menu nav ul li ul.submenu li a::before {
-  background: var(--color-v) none repeat scroll 0 0;
-  border-radius: 50%;
-  content: "";
-  height: 7px;
-  left: 15px;
-  opacity: 0;
-  position: absolute;
-  top: 13px;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-  width: 7px;
-  z-index: 999;
-}*/
 .main-menu nav ul li ul.submenu li:hover a::before {
   opacity: 1;
 }
-/*
-.main-menu nav ul li ul.submenu li:hover a {
-  padding-left: 12px;
-}*/
+
 .main-menu nav ul li:hover > ul.submenu {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
@@ -3618,6 +3659,13 @@ textarea:focus {
 }
 .study-programs-groups .card-title{
   color: var(--color-base);
+}
+.study-programs-groups .card-footer i{
+  font-size: 20px;
+}
+.study-programs-groups .card-footer a{
+  display: flex;
+  align-items: center;
 }
 .study-programs-groups .card-body,
 .study-programs-groups .card-footer{
