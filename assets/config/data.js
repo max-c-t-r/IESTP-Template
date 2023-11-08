@@ -1,7 +1,10 @@
+const titleElement = document.querySelector('title');
 const programsNavList = document.getElementById('programas');
+const programsNavMobList = document.getElementById('programas_mobile_nav');
 const infoDirector = document.getElementById('about_director');
 const descriptionAboutUs = document.getElementById('about_us_description');
 const programsContent = document.getElementById('study_programs_groups');
+const linkLibrary = document.getElementById('virtual_link_library')
 
 const backgroundFooter = document.getElementById('background_image_footer');
 const backgroundStatistics = document.getElementById('background_image_statistics');
@@ -20,6 +23,8 @@ const countGraduate = document.getElementById('count_graduates');
 const countProgram = document.getElementById('count_programs');
 const countYearCreation = document.getElementById('count_years_creation');
 
+const linkFacebookFooter = document.getElementById('link_facebook_footer');
+const linkEmailFooter = document.getElementById('link_email_footer');
 
 document.addEventListener('DOMContentLoaded', () => {
     renderInfo();
@@ -27,19 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function renderInfo(){
     try{
-        const response = await fetch("/assets/js/data.json")
+        const response = await fetch("/assets/config/data.json")
         if (!response.ok){
             console.log("error en la ruta, no se econtro")
             return;
         }
         const data = await response.json();
         renderProgramsNav(data);
+        renderProgramsNavMob(data);
         renderAboutUs(data);
+        renderVirtualLink(data);
         renderPrograms(data);
         renderImage(data);
         renderTextInstute(data);
         renderStatistics(data);
         renderFooterInfo(data);
+        renderSocialNetwork(data);
     }catch(error){
         console.error(error)
     }
@@ -52,6 +60,15 @@ function renderProgramsNav(data){
         programsNavList.appendChild(li);
     });
 }
+function renderProgramsNavMob(data){
+    const listPrograms = data["programas"];
+    listPrograms.forEach(element => {
+        let li = document.createElement('li');
+        li.innerHTML = `<a href="${element.url}">${element.nombre}</a>`;    
+        programsNavMobList.appendChild(li);
+    });
+}
+
 function renderPrograms(data){
     const listPrograms = data["programas"];
     listPrograms.forEach(element =>{
@@ -85,8 +102,10 @@ function renderImage(data){
     logoUnnamed.src = data["imágenes"]["logo_sin_nombre"];
 }
 function renderTextInstute(data){
-    copyrightInstitute.innerHTML = data["informacion"]["nombre"];
-    textFooterInstitute.innerHTML = data["informacion"]["nombre"];
+    var textInstitute = data["informacion"]["nombre"];
+    titleElement.textContent = `IESTP ${textInstitute.toUpperCase()}`
+    copyrightInstitute.innerHTML = textInstitute;
+    textFooterInstitute.innerHTML = textInstitute;
 }
 function renderStatistics(data){
     countStudent.innerHTML = data["estadisticas"]["cantidad_estudiantes"];
@@ -99,4 +118,11 @@ function renderFooterInfo(data){
     locationText.innerHTML = data["informacion"]["ubicación"];
     openingHours.innerHTML = data["informacion"]["horarios_de_atención"];
     phoneNumberFooter.innerHTML = data["informacion"]["teléfono"];
+}
+function renderSocialNetwork (data){
+    linkFacebookFooter.src = data["enlaces_redes"]["facebook"];
+    linkEmailFooter.src = data["enlaces_redes"]["email"];
+}
+function renderVirtualLink(data){
+    linkLibrary.href = data["informacion"]["biblioteca"];
 }

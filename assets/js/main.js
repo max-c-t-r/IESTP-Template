@@ -587,7 +587,7 @@
     
     /* jQuery MeanMenu */
     $('#mobile-menu-active').meanmenu({
-        meanScreenWidth: "991",
+        meanScreenWidth: "1024",
         meanMenuContainer: ".mobile-menu-area .mobile-menu",
     });
     
@@ -747,5 +747,4 @@
         }
       }
     });
-        
 })(jQuery);	

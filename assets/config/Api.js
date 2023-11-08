@@ -18,12 +18,20 @@ const buttonSearch = document.getElementById('send-search');
 const slider = document.getElementById('slider-section');
 const modal = document.getElementById('modal-section');
 
+const searchForm = document.getElementById('search-form');
+const searchText = document.getElementById('search-text');
 
 document.addEventListener('DOMContentLoaded', () => {
-    // paintModal(); -> no se esta usando
+    // paintModal(); 
     paintSlider();
     paintNews();
     paintCommunicated();
+
+    //search
+    searchForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        search(searchText.value);
+    });
 });
 function paintModal(){
     getCategories(categoryModal, sizeModal).then(data =>{
@@ -51,8 +59,8 @@ function paintModal(){
 
 function paintSlider(){
     let firstItem = true;
-    getCategories(categorySlider, sizeSlider).then(data =>{
-        const promises = data.map(category=>{
+    getCategories(categorySlider, sizeSlider).then(data => {
+        const promises = data.map(category => {
             const div = document.createElement('div');
             return getMedia(category).then(data =>{
                 if(firstItem){
@@ -165,5 +173,12 @@ async function getMedia(category) {
         return data;
     } catch(error){
         console.error(error);
+    }
+}
+//search
+function search(text = '') {
+    if (text.trim() !== '') {
+        window.open(`${URL_GLOBAL}/index.php?s=${text}`);
+        searchText.value = "";
     }
 }

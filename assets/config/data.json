@@ -4,9 +4,10 @@
         "url": "https://www.ejemplo.com",
         "email": "ejemplo@gmail.com",
         "teléfono": "+1234567890",
-        "dirección": "123 Calle Ejemplo, Ciudad Ejemplo",
+        "dirección": "123 Calle Ejemplo, Ayacucho",
         "ubicación": "Ayacucho-Huamanga-Ayacucho",
-        "horarios_de_atención": "Mañana: 8:00 a.m. hasta las 2:00 p.m."
+        "horarios_de_atención": "Mañana: 8:00 a.m. hasta las 2:00 p.m.",
+        "biblioteca": "biblioteca.com"
     },
     "imágenes": {
         "logo": "https://www.ejemplo.com/logo.png",
@@ -170,14 +171,11 @@
         "cantidad_programas": 4,
         "cantidad_años_creación": 50
     },
-    "redes_sociales": [
-        {
-            "nombre": "Facebook",
-            "url": "https://www.facebook.com/ejemplo"
-        },
-        {
-            "nombre": "Twitter",
-            "url": "https://www.twitter.com/ejemplo"
-        }
-    ]
+    "enlaces_redes": {
+        "facebook": "https://www.facebook.com/ejemplo",
+        "twitter": "https://www.twitter.com/ejemplo",
+        "whatsapp": "dawd",
+        "youtube": "https://youtube.com",
+        "email": "email.com"
+    }
 }

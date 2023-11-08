@@ -77,6 +77,8 @@
   --color-nav-hover: #FBFF48; /*Color for navigation hover*/
   --color-study-programs: #F4F4F4; /*color background for programs*/
   --color-copyright: #303D3A; /*Base color for background footer*/
+  --color-nav-option: #040037;/*color for navigation options*/ 
+  --color-nav-option-hover: #92cf1e;/*color for navigation options hover*/
 }
 html,
 body {
@@ -1521,12 +1523,12 @@ textarea:focus {
 .mobile-menu-area {
   display: none;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 1025px) {
   .mobile-menu-area {
     display: block;
   }
 }
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .mobile-menu-area {
     display: block;
   }
@@ -1535,27 +1537,75 @@ textarea:focus {
   .mobile-menu-area {
     display: block;
   }
-}
+} */
 
 #mobile-menu-active {
   display: none;
 }
 
-.mobile-menu .mean-nav ul.menu-overflow {
+/* .mobile-menu .mean-nav ul.menu-overflow {
   height: 215px;
   margin-top: 10;
   overflow-y: auto;
+} */
+.mobile-menu .mean-nav{
+  background-color: var(--color-nav-option);
+  padding: 0 1.5em 0;
 }
-
+.mean-container .mean-nav ul li li a{
+  padding: 14px 7px 14px 25px !important;
+  border-top: none !important;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+.mobile-menu .mean-bar{
+  z-index: 100;
+}
+.mobile-menu .mean-bar{
+  position: absolute;
+  width: 90%;
+  right: 0;
+  top: 0;
+}
+.mobile-menu .menu-overflow{
+  margin: 52.8px 0 0 !important;
+}
+.mean-container a.meanmenu-reveal span{
+  height: 3px !important;
+  margin-top: 4px;
+}
+.mobile-menu .mean-bar .meanclose{
+  color: white;
+}
+.mean-container a.meanmenu-reveal{
+  right: 34.4px;
+  top: 24px !important;
+  width: 25px !important;
+}
+.mean-container a.meanmenu-reveal:hover span{
+  background-color: var(--color-nav-option-hover);
+}
+.mean-container .mean-nav ul li a.mean-expand{
+  right: 30px !important;
+}
 .mobile-menu.mean-container .mean-nav ul {
   margin: 14px 0 0;
 }
+.mean-container .mean-nav ul li a{
+  background-color: transparent !important;
+  color: white !important;
+  font-size: 18px;
+  padding: 18px 9px;
+  text-transform: none;
+}
+.mean-container .mean-nav ul li{
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  border-top: none !important;
+}
 .mean-container .mean-nav ul li a:hover{
   color: var(--color-base);
-}
-.mean-container a.meanmenu-reveal{
-  top: -50px;
-  right: 20px;
 }
 /*-- 
     Scroll Up 
@@ -1571,6 +1621,7 @@ textarea:focus {
   overflow: hidden;
   border-radius: 50px;
   z-index: 9811 !important;
+  display: none !important;
 }
 @media only screen and (max-width: 767px) {
   #scrollUp {
@@ -1664,6 +1715,9 @@ textarea:focus {
 .header-information .header-logo{
   height: 100%;
 }
+.logo-mobile{
+  display: none;
+}
 .header-information .header-logo img{
   max-width: 278px;
   max-height: 49px;
@@ -1689,6 +1743,44 @@ textarea:focus {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.header-nav-options .nav-option{
+  position: relative;
+}
+.header-nav-options .nav-option:after{
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  right: 50%;
+  background-color: white;
+  -webkit-transform: scale(0, 0) translate(-50%, 0);
+  transform: scale(0, 0) translate(-50%, 0);
+  transition: color .0s ease-in-out, -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, color .0s ease-in-out;
+  transition: transform .2s ease-in-out, color .0s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+.header-nav-options .nav-option:hover::after{
+  transform: scale(1, 1) translate(50%, 0);
+}
+.header-nav-options .submenu{
+  background-color: var(--color-nav-option) !important;
+  padding: 0 !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+.header-nav-options .submenu li{
+  padding: 0 !important;
+}
+.header-nav-options .submenu a{
+  text-transform: uppercase !important;
+  color: white !important;
+  font-weight: bold !important;
+  padding: 14px !important;
+}
+.header-nav-options .submenu a:hover{
+  background-color: var(--color-nav-option-hover);
 }
 .main-menu nav ul li a{
   font-size: 14px !important;
@@ -1884,6 +1976,19 @@ textarea:focus {
   align-items: center;
   color: white;
   font-size: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .header-information {
+    display: none;
+  }
+  .header-nav-options{
+    display: none;
+  }
+  .logo-mobile{
+    display: block;
+    position: absolute;
+    left: 24px;
+  }
 }
 @media only screen and (max-width: 440px) {
   .header-others-logo{
@@ -3536,8 +3641,26 @@ textarea:focus {
 .text-blue.about-choose-content h3 {
   color: #307ad5;
 }
-
-
+/*---------------- Modal ----------------*/
+.modal-body{
+  padding: 0 !important;
+}
+.modal-content,
+.modal-content img{
+  border-radius: 5px;
+}
+/*---------------- Search ----------------*/
+.search-section{
+  background-color: var(--color-base);
+}
+.search-submit-btn{
+  background-color: gray;
+  color: white;
+}
+.search-submit-btn:hover{
+  background-color: var(--color-base-light);
+  color: white;
+}
 /*---------------- Services ----------------*/
 .our-services-section h2{
   font-size: 2.5rem;
