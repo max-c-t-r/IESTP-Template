@@ -10,6 +10,7 @@ const backgroundFooter = document.getElementById('background_image_footer');
 const backgroundStatistics = document.getElementById('background_image_statistics');
 const logo = document.getElementById('logo');
 const logoUnnamed = document.getElementById('logo_unnamed');
+const logoMobile = document.getElementById('logo-mobile');
 
 const textFooterInstitute = document.getElementById('text_instituto_footer');
 const copyrightInstitute = document.getElementById('copyright_instituto');
@@ -18,6 +19,7 @@ const locationText = document.getElementById('location_text');
 const openingHours = document.getElementById('opening_hours_text');
 const phoneNumberFooter = document.getElementById('phone_number_footer');
 
+const statisticsYear = document.getElementById('statistics-year');
 const countStudent = document.getElementById('count_students');
 const countGraduate = document.getElementById('count_graduates');
 const countProgram = document.getElementById('count_programs');
@@ -100,6 +102,7 @@ function renderImage(data){
     backgroundFooter.style.backgroundImage = `url(${data["imágenes"]["imagen_pie_pagina"]})`;
     logo.src = data["imágenes"]["logo"];
     logoUnnamed.src = data["imágenes"]["logo_sin_nombre"];
+    logoMobile.src = data["imágenes"]["logo_sin_nombre"];
 }
 function renderTextInstute(data){
     var textInstitute = data["informacion"]["nombre"];
@@ -110,8 +113,9 @@ function renderTextInstute(data){
 function renderStatistics(data){
     countStudent.innerHTML = data["estadisticas"]["cantidad_estudiantes"];
     countGraduate.innerHTML = data["estadisticas"]["cantidad_titulados"];
-    countProgram.innerHTML = data["estadisticas"]["cantidad_programas"];
-    countYearCreation.innerHTML = data["estadisticas"]["cantidad_años_creación"];
+    // countProgram.innerHTML = data["estadisticas"]["cantidad_programas"];
+    countProgram.innerHTML = data["programas"].length;
+    countYearCreation.innerHTML = new Date().getFullYear() - data["estadisticas"]["cantidad_año_creación"];
 }
 function renderFooterInfo(data){
     addressText.innerHTML = data["informacion"]["dirección"];
@@ -126,3 +130,6 @@ function renderSocialNetwork (data){
 function renderVirtualLink(data){
     linkLibrary.href = data["informacion"]["biblioteca"];
 }
+
+//just add the year to the title of the statistics
+statisticsYear.textContent = `Estadísticas ${new Date().getFullYear()}`;

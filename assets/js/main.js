@@ -748,3 +748,9 @@
       }
     });
 })(jQuery);	
+
+const preload = document.getElementById('preload');
+document.addEventListener("DOMContentLoaded", function(){
+  preload.style.visibility = 'hidden';
+  preload.style.opacity = '0';
+})

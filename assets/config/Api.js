@@ -22,7 +22,7 @@ const searchForm = document.getElementById('search-form');
 const searchText = document.getElementById('search-text');
 
 document.addEventListener('DOMContentLoaded', () => {
-    // paintModal(); 
+    paintModal(); 
     paintSlider();
     paintNews();
     paintCommunicated();
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         search(searchText.value);
     });
+    
 });
 function paintModal(){
     getCategories(categoryModal, sizeModal).then(data =>{
@@ -40,7 +41,8 @@ function paintModal(){
             return getMedia(category).then(data => {
                 div.classList.add('carousel-item', 'active');
                 div.innerHTML = `
-                <img src="${data.source_url}" class="d-block w-100" alt="">
+                <img src="${data.source_url}" class="d-block w-100" alt="${category.title.rendered}">
+                <p class="modal-date pr-50 pl-50 fw-bold text-center"> Fecha de publicación: ${dateToString(data.date)}</p>
                 `;
                 modal.appendChild(div);
             });

@@ -3641,6 +3641,19 @@ textarea:focus {
 .text-blue.about-choose-content h3 {
   color: #307ad5;
 }
+/*--------------  Preload ---------------*/
+.preload{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+  background-color: rgba(64, 64, 64, 0.937);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.2s;
+  gap: 20px;
+}
 /*---------------- Modal ----------------*/
 .modal-body{
   padding: 0 !important;
@@ -4030,6 +4043,31 @@ textarea:focus {
 /*--------- links of interest ---------*/
 .links-interest-section{
   background-color: var(--color-base-light);
+}
+
+/* ---------------- whatsapp ----------------- */
+.whatsapp-button {
+  position: fixed;
+  bottom: 38px;
+  right: 38px;
+  z-index: 1000;
+}
+
+.whatsapp-button a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+}
+.whatsapp-button a:hover{
+  filter: brightness(1.2); 
 }
 
 /*--------- 4. choose us area ---------*/
