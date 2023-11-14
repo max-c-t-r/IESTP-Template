@@ -1,50 +1,17 @@
 @charset "UTF-8";
-/*-----------------------------------------------------------------------------------
-
-    Template Name: Glaxdu – Education Bootstrap 5 Template
-    Version: 2.1 
-
------------------------------------------------------------------------------------
-
-    CSS INDEX
-    ===================
-
-    1. Template default CSS
-    2. Header style
-	  3. Slider style
-    4. choose us area
-    5. About us
-    6. Course area
-    7. Achievement style
-    8. Register style
-    9. Teacher style
-    10. Event area
-    11. Blog style 
-    12. footer area
-    13. Banner style
-    14. Product style
-    15. Discount area
-    16. Brand logo
-    17. Blog details
-    18. Cart page
-    19. Checkout page
-    20. Contact page
-    21. Course details
-    22. Event details page
-    23. Product details page
-    24. Shop page
-    25. Sidebar style
-    26. Video style
-
------------------------------------------------------------------------------------*/
-/*----------------------------------------*/
-/*  1. Template default CSS
-/*----------------------------------------*/
 /*-- Google Font --*/
-/* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap'); */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
 /*-- Common Style --*/
+
+:root{
+  --color-base: #6146C6; /*Base color for page */
+  --color-base-light: #a788e7; /*Base color light for page*/
+  --color-nav-hover: #FBFF48; /*Color for navigation hover*/
+  --color-study-programs: #F4F4F4; /*color background for programs*/
+  --color-copyright: #303D3A; /*Base color for background footer*/
+  --color-nav-option: #040037;/*color for navigation options*/ 
+  --color-nav-option-hover: #92cf1e;/*color for navigation options hover*/
+}
 @media only screen and (min-width: 1200px) {
   .container {
     max-width: 1200px;
@@ -70,15 +37,6 @@
 *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-:root{
-  --color-base: #6146C6; /*Base color for page */
-  --color-base-light: #a788e7; /*Base color light for page*/
-  --color-nav-hover: #FBFF48; /*Color for navigation hover*/
-  --color-study-programs: #F4F4F4; /*color background for programs*/
-  --color-copyright: #303D3A; /*Base color for background footer*/
-  --color-nav-option: #040037;/*color for navigation options*/ 
-  --color-nav-option-hover: #92cf1e;/*color for navigation options hover*/
 }
 html,
 body {
@@ -1714,6 +1672,7 @@ textarea:focus {
 }
 .header-information .header-logo{
   height: 100%;
+  padding: 3px 0;
 }
 .logo-mobile{
   display: none;
@@ -1743,6 +1702,47 @@ textarea:focus {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.header-others-logo{
+  display: flex;
+  align-items: center;
+}
+.header-others-socials{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.38em;
+}
+.header-others-socials li{
+  width: 36px;
+  height: 36px;
+  background-color: #deddeb;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.header-others-socials li,
+.header-others-socials a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-social-header a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-others-socials li:hover{
+  background-color: var(--color-nav-option-hover);
+}
+.header-others-socials a:hover{
+  color: white !important;
+}
+.header-others-socials i{
+  margin: auto auto;
+  font-size: 1.5em;
+}
+.header-others-logo a{
+  width: 30px;
+  height: 30px;
 }
 .header-nav-options .nav-option{
   position: relative;
@@ -1789,163 +1789,6 @@ textarea:focus {
 .header-nav-options i{
   font-size: 12.6px!important;
 }
-/* .header-top {
-  padding: 15px 0 22px;
-  position: relative;
-}
-.header-top:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 44px;
-  content: "";
-  background-color: black;
-  opacity: 0.8;
-}
-.menu-options{
-  background-color: var(--color-base);
-  line-height: 4;
-}
-@media only screen and (max-width: 767px) {
-  .header-top:before {
-    height: 60px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .header-top:before {
-    height: 46px;
-  }
-}
-
-.header-contact ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media only screen and (max-width: 767px) {
-  .header-contact ul {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-bottom: 5px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .header-contact ul {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    margin-bottom: 0px;
-  }
-}
-.header-contact ul li {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  margin-right: 48px;
-  line-height: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  z-index: 1;
-}
-@media only screen and (max-width: 767px) {
-  .header-contact ul li {
-    margin-right: 18px;
-    font-size: 12px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .header-contact ul li {
-    font-size: 14px;
-  }
-}
-.header-contact ul li i {
-  font-size: 15px;
-  margin-right: 10px;
-}
-.header-contact ul li:last-child {
-  margin-right: 0px;
-}
-.header-contact ul li a {
-  color: #fff;
-}
-.header-contact ul li a:hover {
-  color: #eaeaea;
-}
-
-.login-register {
-  float: right;
-}
-@media only screen and (max-width: 767px) {
-  .login-register {
-    float: inherit;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .login-register {
-    float: right;
-  }
-}
-.login-register ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media only screen and (max-width: 767px) {
-  .login-register ul {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-.login-register ul li {
-  margin-right: 30px;
-  line-height: 1;
-  position: relative;
-}
-.login-register ul li:last-child {
-  margin-right: 0;
-}
-.login-register ul li a {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-}
-.login-register ul li a:hover {
-  color: #ddd;
-}
-@media only screen and (max-width: 767px) {
-  .login-register ul li a {
-    font-size: 12px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .login-register ul li a {
-    font-size: 14px;
-  }
-}
-.login-register ul li:before {
-  position: absolute;
-  top: 3px;
-  right: -16px;
-  content: "";
-  background-color: #fff;
-  height: 10px;
-  width: 1px;
-}
-.login-register ul li:last-child:before {
-  display: none;
-}
-
-.logo {
-  margin-top: 10px;
-} */
 .header-others-social{
   display: flex;
   border-right: 2px solid #8FC0B4;
@@ -2462,6 +2305,11 @@ textarea:focus {
   position: absolute;
   color: white;
   top: -300px;
+}
+.slider-home-page .carousel-inner img{
+  max-height: 900px;
+  /* max-width: 1800px; */
+  /* margin: auto auto; */
 }
 .slider-home-page .carousel-inner .hero-content h2{
   margin-top: 20px;
@@ -3647,12 +3495,54 @@ textarea:focus {
   width: 100%;
   position: fixed;
   z-index: 10000;
-  background-color: rgba(64, 64, 64, 0.937);
+  background-color: rgba(31, 31, 31, 0.937);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 1.2s;
-  gap: 20px;
+  transition: all .8s;
+}
+.preload .line {
+  height: 6px;
+  width: 100%;
+  background: #e8e8e8;
+  margin-top: 20px;
+}
+.preload .line .inner {
+  width: 100%;
+  height: inherit;
+  background: var(--color-base);
+  animation: slide 2s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform-origin: left;
+    transform: scalex(0.3);
+  }
+  25% {
+    transform-origin: left;
+    transform: scalex(1);
+  }
+  26% {
+    transform-origin: right;
+    transform: scalex(1);
+  }
+  50% {
+    transform-origin: right;
+    transform: scalex(0.3);
+  }
+  75% {
+    transform-origin: right;
+    transform: scalex(1);
+  }
+  76% {
+    transform-origin: left;
+    transform: scalex(1);
+  }
+  100% {
+    transform-origin: left;
+    transform: scalex(0.3);
+  }
 }
 /*---------------- Modal ----------------*/
 .modal-body{

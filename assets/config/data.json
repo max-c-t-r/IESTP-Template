@@ -1,138 +1,18 @@
 {
     "informacion": {
         "nombre": "Ejemplo",
-        "url": "https://www.ejemplo.com",
         "email": "ejemplo@gmail.com",
-        "teléfono": "+1234567890",
+        "teléfono": "1234567890",
         "dirección": "123 Calle Ejemplo, Ayacucho",
         "ubicación": "Ayacucho-Huamanga-Ayacucho",
         "horarios_de_atención": "Mañana: 8:00 a.m. hasta las 2:00 p.m.",
         "biblioteca": "biblioteca.com"
     },
     "imágenes": {
-        "logo": "https://www.ejemplo.com/logo.png",
+        "logo": "https://iestphuanta.edu.pe/wp-content/uploads/2023/05/logo_tecno.png",
         "logo_sin_nombre": "https://www.ejemplo.com/logo_sin_nombre.png",
         "imagen_estadistica": "https://www.ejemplo.com/logo.png",
         "imagen_pie_pagina": "https://www.ejemplo.com/logo.png"
-    },
-    "navegacion": {
-        "nosotros":[
-            {
-                "nombre": "Presentación",
-                "url": "/presentacion/"
-            },
-            {
-                "nombre": "Visión, misión y valores",
-                "url": "/vision-mision-y-valores/"
-            },
-            {
-                "nombre": "organización institucional",
-                "url": "/organizacion-institucional/"
-            },
-            {
-                "nombre": "organización institucional",
-                "url": "/organizacion-institucional/"
-            },
-            {
-                "nombre": "autoridades y plana jerarquica",
-                "url": "/autoridades-2/"
-            },
-            {
-                "nombre": "plana docente",
-                "url": "/plana-docente/"
-            },
-            {
-                "nombre": "local",
-                "url": "/locales/"
-            }
-        ],
-        "admision_y_matriculas" : [
-            {
-                "nombre": "Admisión",
-                "url": "/category/admision-y-matriculas/"
-            },
-            {
-                "nombre": "Mátricula",
-                "url": "/matricula/"
-            },
-            {
-                "nombre": "Becas y créditos",
-                "url": "/becas-y-credito/"
-            }
-        ],
-        "transparencia" : [
-            {
-                "nombre": "documentos de gestión",
-                "url": "/documentos-de-gestion/"
-            },
-            {
-                "nombre": "Estadisticas",
-                "url": "/estadisticas/"
-            },
-            {
-                "nombre": "Inversiones y recursos económicos",
-                "url": "/inversiones-y-recursos-economicos/"
-            },
-            {
-                "nombre": "libro de reclamaciones",
-                "url": "/libro-de-reclamaciones/"
-            },
-            {
-                "nombre": "licenciamiento",
-                "url": "/licenciamiento/"
-            }
-        ],
-        "tramite": [
-            {
-                "nombre": "tupa",
-                "url": "/tupa/"
-            },
-            {
-                "nombre": "Procesos académicos",
-                "url": "/procesos-academicos/"
-            },
-            {
-                "nombre": "servicios de trámite",
-                "url": "/servicios-de-tramite/"
-            }
-        ],
-        "contactos": {
-            "nombre": "contactos",
-            "url": "/contacts/"
-        },
-        "servicios": [
-            {
-                "nombre": "biblioteca",
-                "url": "/biblioteca/"
-            },
-            {
-                "nombre": "Servicios complementarios",
-                "url": "/servicios-complementarios/"
-            },
-            {
-                "nombre": "bolsa laboral",
-                "url": "/bolsa-laboral/"
-            },
-            {
-                "nombre": "sistema de registro de información académica",
-                "url": "/sistema-de-registrode-informacion-academica/"
-            },
-            {
-                "nombre": "entorno virtual de aprendisaje-eva",
-                "url": "/entorno-virtual-de-aprendizaje-eva/"
-            }
-        ],
-        "otros": [
-            {
-                "nombre": "links institucionales",
-                "url": "/links-institucionales/"
-            },
-            {
-                "nombre": "noticias",
-                "url": "/category/noticias/"
-            }
-        ]
-
     },
     "programas": [
         {
@@ -174,7 +54,7 @@
     "enlaces_redes": {
         "facebook": "https://www.facebook.com/ejemplo",
         "twitter": "https://www.twitter.com/ejemplo",
-        "whatsapp": "dawd",
+        "instagram": "instagram",
         "youtube": "https://youtube.com",
         "email": "email.com"
     }

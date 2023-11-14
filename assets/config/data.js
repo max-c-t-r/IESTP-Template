@@ -11,6 +11,7 @@ const backgroundStatistics = document.getElementById('background_image_statistic
 const logo = document.getElementById('logo');
 const logoUnnamed = document.getElementById('logo_unnamed');
 const logoMobile = document.getElementById('logo-mobile');
+const logoLoading = document.getElementById('loadingLogo');
 
 const textFooterInstitute = document.getElementById('text_instituto_footer');
 const copyrightInstitute = document.getElementById('copyright_instituto');
@@ -27,7 +28,12 @@ const countYearCreation = document.getElementById('count_years_creation');
 
 const linkFacebookFooter = document.getElementById('link_facebook_footer');
 const linkEmailFooter = document.getElementById('link_email_footer');
+const headerFacebook = document.getElementById('header_facebook');
+const headerTwitter = document.getElementById('header_twitter');
+const headerInstagram = document.getElementById('header_instagram');
+const footerPhone = document.getElementById('link_phone_footer');
 
+const wspNumber = document.getElementById('number-whatsapp');
 document.addEventListener('DOMContentLoaded', () => {
     renderInfo();
 });
@@ -103,6 +109,7 @@ function renderImage(data){
     logo.src = data["imágenes"]["logo"];
     logoUnnamed.src = data["imágenes"]["logo_sin_nombre"];
     logoMobile.src = data["imágenes"]["logo_sin_nombre"];
+    logoLoading.src = data["imágenes"]["logo"];
 }
 function renderTextInstute(data){
     var textInstitute = data["informacion"]["nombre"];
@@ -122,10 +129,15 @@ function renderFooterInfo(data){
     locationText.innerHTML = data["informacion"]["ubicación"];
     openingHours.innerHTML = data["informacion"]["horarios_de_atención"];
     phoneNumberFooter.innerHTML = data["informacion"]["teléfono"];
+    wspNumber.href = `https://api.whatsapp.com/send?phone=${data["informacion"]["teléfono"]}`;
 }
 function renderSocialNetwork (data){
-    linkFacebookFooter.src = data["enlaces_redes"]["facebook"];
-    linkEmailFooter.src = data["enlaces_redes"]["email"];
+    linkFacebookFooter.href = data["enlaces_redes"]["facebook"];
+    linkEmailFooter.href = data["enlaces_redes"]["email"];
+    headerFacebook.href = data["enlaces_redes"]["facebook"];
+    headerTwitter.href = data["enlaces_redes"]["twitter"];
+    headerInstagram.href = data["enlaces_redes"]["instagram"];
+    footerPhone.href = `https://api.whatsapp.com/send?phone=${data["informacion"]["teléfono"]}`;
 }
 function renderVirtualLink(data){
     linkLibrary.href = data["informacion"]["biblioteca"];

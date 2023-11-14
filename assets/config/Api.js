@@ -22,7 +22,7 @@ const searchForm = document.getElementById('search-form');
 const searchText = document.getElementById('search-text');
 
 document.addEventListener('DOMContentLoaded', () => {
-    paintModal(); 
+    // paintModal(); 
     paintSlider();
     paintNews();
     paintCommunicated();
